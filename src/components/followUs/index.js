@@ -1,12 +1,26 @@
 "use client";
-import { FollowOnInstaData } from "@/constants/followOnInstaData";
-import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
-import Image from "next/image";
+
+// * react imports * //
 import React from "react";
+
+// * next imports * //
+import Image from "next/image";
+
+// * mui imports * //
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
+
+// * third party imports * //
+import { motion } from "framer-motion";
 import Carousel from "react-material-ui-carousel";
 
+// * local imports * //
+import { FollowOnInstaData } from "@/constants/followOnInstaData";
+
 const FollowUs = () => {
+  // * hooks * //
   const isXs = useMediaQuery("(min-width: 0px) and (max-width: 900px)");
+
+  // * render * //
   return (
     <Container sx={{ p: "0 !important" }} className="container">
       <Box my={{ xs: "30px", sm: "40px", xl: "105px" }}>
@@ -16,6 +30,12 @@ const FollowUs = () => {
             fontSize={{ xs: "20px", sm: "24px", lg: "30px" }}
             fontWeight={400}
             lineHeight={"48px"}
+            fontFamily={"Bastiken"}
+            component={motion.p}
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 3, ease: "easeInOut" }}
           >
             Follow us on Instagram
           </Typography>

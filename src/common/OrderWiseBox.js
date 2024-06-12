@@ -1,4 +1,6 @@
+"use client";
 import { Box, Button, Grid, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
@@ -13,6 +15,8 @@ const OrderWiseBox = ({
   imageHeight,
   imageWidth,
   imageSpacing,
+  descriptionFontFamily,
+  headingTextSize,
 }) => {
   return (
     <Box sx={{ backgroundColor: "#ead9ce" }}>
@@ -49,6 +53,12 @@ const OrderWiseBox = ({
                   fontSize={{ xs: "20px", sm: "24px", md: "30px" }}
                   fontWeight={400}
                   lineHeight={"48px"}
+                  fontFamily={"Bastiken"}
+                  component={motion.p}
+                  initial={{ opacity: 0, y: 60 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 3, ease: "easeInOut" }}
                 >
                   {title}
                 </Typography>
@@ -65,9 +75,15 @@ const OrderWiseBox = ({
                   display={"flex"}
                   justifyContent={"end"}
                   mt={{ xs: "20px", sm: "25px", lg: "86px" }}
-                  my={{ xs: "20px", sm: "25px", lg: "0" }}
+                  mb={{ xs: "20px", sm: "25px", lg: "0" }}
                 >
                   <Button
+                    component={motion.button}
+                    whileHover={{
+                      scale: 1.1,
+                      boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                    }}
+                    whileTap={{ scale: 0.9 }}
                     className={
                       buttonOrder === "unique"
                         ? "unique-btn"
@@ -117,7 +133,19 @@ const OrderWiseBox = ({
                 <Typography
                   color="#1B1B1B"
                   fontWeight={400}
-                  fontSize={{ xs: "20px", sm: "26px", md: "28px", lg: "45px" }}
+                  fontFamily={"Bastiken "}
+                  letterSpacing={"0.02em"}
+                  component={motion.p}
+                  initial={{ opacity: 0, y: 60 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 3, ease: "easeInOut" }}
+                  fontSize={{
+                    xs: "20px",
+                    sm: "26px",
+                    md: "28px",
+                    lg: headingTextSize,
+                  }}
                   lineHeight={{
                     xs: "25px",
                     sm: "30px",
@@ -138,6 +166,8 @@ const OrderWiseBox = ({
                   }}
                   color="#1B1B1B"
                   fontWeight={300}
+                  maxWidth={{ xs: "100%", lg: "490px" }}
+                  fontFamily={descriptionFontFamily}
                   fontSize={{ xs: "12px", sm: "14px", lg: "16px" }}
                   lineHeight={{ xs: "20px", sm: "24px", lg: "27px" }}
                 >
@@ -159,6 +189,12 @@ const OrderWiseBox = ({
                       ? "unique-btn"
                       : "reverse-unique-btn"
                   }
+                  component={motion.button}
+                  whileHover={{
+                    scale: 1.1,
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                  }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <Typography
                     fontSize={{ xs: "12px", sm: "14px", lg: "17px" }}

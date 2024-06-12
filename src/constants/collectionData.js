@@ -1,3 +1,4 @@
+// Collection  page dummy Data
 export const collectionData = [
   {
     id: 1,

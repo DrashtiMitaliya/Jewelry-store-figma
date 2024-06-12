@@ -1,12 +1,25 @@
 "use client";
-import { SellersData } from "@/constants/sellersData";
-import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
-import Image from "next/image";
+
+// * react imports * //
 import React from "react";
+
+// * next imports * //
+import Image from "next/image";
+
+// * mui imports * //
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
+
+// * local imports * //
+import { SellersData } from "@/constants/sellersData";
+import AnimatedImage from "@/common/AnimatedImage";
+
+// * third party imports * //
+import { motion } from "framer-motion";
 import Carousel from "react-material-ui-carousel";
 
 const BestSellers = () => {
   const isXs = useMediaQuery("(min-width: 0px) and (max-width: 900px)");
+  const arrayToMap = SellersData.filter((item) => item?.name);
 
   return (
     <Container className="container">
@@ -21,6 +34,12 @@ const BestSellers = () => {
             fontSize={{ xs: "20px", sm: "26px", lg: "30px" }}
             fontWeight={400}
             lineHeight={"48px"}
+            fontFamily={"Bastiken"}
+            component={motion.p}
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 3, ease: "easeInOut" }}
           >
             Best Sellers
           </Typography>
@@ -36,8 +55,8 @@ const BestSellers = () => {
                 navButtonsAlwaysVisible
                 indicators={false}
               >
-                {SellersData &&
-                  SellersData.map((item) => (
+                {arrayToMap &&
+                  arrayToMap.map((item) => (
                     <>
                       {item?.name && (
                         <Grid
@@ -119,7 +138,7 @@ const BestSellers = () => {
                         {item.name ? (
                           <>
                             <Box>
-                              <Image
+                              <AnimatedImage
                                 width={368}
                                 height={404}
                                 src={item.image}

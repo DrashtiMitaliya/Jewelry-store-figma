@@ -1,5 +1,9 @@
 "use client";
-import { EarringsData } from "@/constants/earringsData";
+
+// * react imports * //
+import React from "react";
+
+// * mui imports * //
 import {
   Box,
   Button,
@@ -8,9 +12,16 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+
+// * next imports * //
 import Image from "next/image";
-import React from "react";
+
+// * local imports * //
+import { EarringsData } from "@/constants/earringsData";
+
+//* third party imports * //
 import Carousel from "react-material-ui-carousel";
+import { motion } from "framer-motion";
 
 const SignatureEarrings = () => {
   const isXs = useMediaQuery("(min-width: 0px) and (max-width: 900px)");
@@ -24,6 +35,12 @@ const SignatureEarrings = () => {
             fontSize={{ xs: "20px", sm: "24px", lg: "30px" }}
             fontWeight={400}
             lineHeight={"48px"}
+            fontFamily={"Bastiken"}
+            component={motion.p}
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 3, ease: "easeInOut" }}
           >
             Signature Earrings
           </Typography>
@@ -96,7 +113,15 @@ const SignatureEarrings = () => {
           justifyContent={"end"}
           mt={{ xs: "20px", sm: "30px", xl: "47px" }}
         >
-          <Button className="reverse-unique-btn">
+          <Button
+            component={motion.button}
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="reverse-unique-btn"
+          >
             <Typography
               fontSize={{ xs: "12px", sm: "15px", lg: "17px" }}
               fontWeight={400}

@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import LinkStyled from "./LinkStyled";
 
 const Footer = () => {
   return (
@@ -28,8 +29,9 @@ const Footer = () => {
                 lineHeight={"30px"}
                 fontSize={"18px"}
                 fontWeight={300}
+                color={"#1B1B1B"}
               >
-                Join our email list
+                Join Our Email list
               </Typography>
               <Typography
                 mb={5}
@@ -37,6 +39,9 @@ const Footer = () => {
                 fontSize={"14px"}
                 fontWeight={300}
                 color={"#6A6A6A"}
+                maxWidth={{ xs: "100%", lg: "325px" }}
+                width={"100%"}
+                letterSpacing={"0.01em"}
               >
                 Subscribing to Jewels allows you to stay updated on the latest
                 trends and designs in the jewelry industry.
@@ -48,21 +53,22 @@ const Footer = () => {
                 marginInline={"auto"}
                 display={"flex"}
                 justifyContent={"center"}
-                sx={{
-                  backgroundColor: "#fff",
-                  borderRadius: "30px",
-                  height: "41px",
-                }}
+                alignItems={"center"}
               >
                 <TextField
                   placeholder="Email"
                   fullWidth
                   sx={{
                     my: "10px",
-                    "& .MuiOutlinedInput-notchedOutline": {
+                    "& .MuiInputBase-root": {
                       border: "none",
                       backgroundColor: "white",
-                      color: "#000 !important",
+                      color: "#696969 !important",
+                      borderRadius: "20px",
+                      height: "41px",
+                    },
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      border: "none",
                     },
                     "& .MuiInputBase-input": {
                       fontSize: "16px",
@@ -77,13 +83,25 @@ const Footer = () => {
                 <Button
                   sx={{
                     width: "94px",
+                    height: "41px",
+                    ml: "-30px",
                     textTransform: "capitalize",
                     backgroundColor: "#b4815e",
                     borderRadius: "20px",
+                    color: "#FFFFFF",
+                    "&:hover": {
+                      backgroundColor: "#b4815e",
+                    },
                   }}
-                  variant="contained"
                 >
-                  Send
+                  <Typography
+                    lineHeight={"27px"}
+                    fontSize={"16px"}
+                    fontWeight={300}
+                    fontFamily={"Martel"}
+                  >
+                    Send
+                  </Typography>
                 </Button>
               </Box>
 
@@ -96,7 +114,7 @@ const Footer = () => {
                 <Box
                   border={"1px solid #b4815e"}
                   borderRadius={"50%"}
-                  padding={"14px"}
+                  padding={{ xs: "7px ", md: "14px" }}
                   display={"inline-flex"}
                   justifyContent={"center"}
                   alignItems={"center"}
@@ -107,12 +125,13 @@ const Footer = () => {
                     alt="instagram"
                     width={21}
                     height={21}
+                    style={{ cursor: "pointer" }}
                   />
                 </Box>
                 <Box
                   border={"1px solid #b4815e"}
                   borderRadius={"50%"}
-                  padding={"14px"}
+                  padding={{ xs: "7px ", md: "14px" }}
                   display={"inline-flex"}
                   justifyContent={"center"}
                   alignItems={"center"}
@@ -123,22 +142,23 @@ const Footer = () => {
                     alt="instagram"
                     width={21}
                     height={21}
+                    style={{ cursor: "pointer" }}
                   />
                 </Box>
                 <Box
                   border={"1px solid #b4815e"}
                   borderRadius={"50%"}
-                  padding={"14px"}
+                  padding={{ xs: "7px ", md: "14px" }}
                   display={"inline-flex"}
                   justifyContent={"center"}
                   alignItems={"center"}
-                  cursor={"pointer"}
                 >
                   <Image
                     src="/assets/images/footer/facebook.svg"
                     alt="instagram"
                     width={21}
                     height={21}
+                    style={{ cursor: "pointer" }}
                   />
                 </Box>
               </Box>
@@ -149,7 +169,7 @@ const Footer = () => {
             xs={12}
             md={12}
             lg={8}
-            mt={{ xs: "30px", sm: "40px", xl: "62px" }}
+            mt={{ xs: "20px", sm: "40px", xl: "62px" }}
           >
             <Grid
               container
@@ -157,7 +177,7 @@ const Footer = () => {
               columnSpacing={"91px"}
               display={"flex"}
               textAlign={{ xs: "center", sm: "left" }}
-              gap={{ xs: "20px", sm: "40px", md: 0 }}
+              gap={{ xs: "10px", sm: "40px", md: 0 }}
             >
               <Grid
                 textAlign={{ xs: "center", lg: "left" }}
@@ -166,7 +186,7 @@ const Footer = () => {
                 md={4}
               >
                 <Box
-                  gap={{ xs: "5px", sm: "7px" }}
+                  gap={{ xs: "2px", sm: "7px" }}
                   display={"flex"}
                   flexDirection={"column"}
                 >
@@ -179,60 +199,11 @@ const Footer = () => {
                     Shop
                   </Typography>
 
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    Collection
-                  </Link>
-
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    Rings
-                  </Link>
-
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    Bracelet
-                  </Link>
-
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    Chains
-                  </Link>
-
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    Weddings Rings
-                  </Link>
+                  <LinkStyled text={"Collections"} />
+                  <LinkStyled text={"Rings"} />
+                  <LinkStyled text={"Bracelet"} />
+                  <LinkStyled text={"Chains"} />
+                  <LinkStyled text={"Wedding Rings"} />
                 </Box>
               </Grid>
               <Grid
@@ -242,7 +213,7 @@ const Footer = () => {
                 md={4}
               >
                 <Box
-                  gap={{ xs: "5px", sm: "7px" }}
+                  gap={{ xs: "2px", sm: "7px" }}
                   display={"flex"}
                   flexDirection={"column"}
                 >
@@ -255,49 +226,12 @@ const Footer = () => {
                     About
                   </Typography>
 
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    About Us
-                  </Link>
+                  <LinkStyled text={"About Us"} />
 
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    Contact
-                  </Link>
+                  <LinkStyled text={"Contact"} />
 
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    Privacy Policy
-                  </Link>
-
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "#1B1B1B",
-                      cursor: "pointer",
-                    }}
-                    href={"#"}
-                  >
-                    FAQ's
-                  </Link>
+                  <LinkStyled text={"Privacy Policy"} />
+                  <LinkStyled text={"FAQ's"} />
                 </Box>
               </Grid>
               <Grid
@@ -307,7 +241,7 @@ const Footer = () => {
                 md={4}
               >
                 <Box
-                  gap={{ xs: "5px", sm: "7px" }}
+                  gap={{ xs: "2px", sm: "7px" }}
                   display={"flex"}
                   flexDirection={"column"}
                 >
@@ -323,6 +257,9 @@ const Footer = () => {
                   <Typography
                     style={{
                       color: "#1B1B1B",
+                      fontSize: "15px",
+                      lineHeight: "25px",
+                      fontWeight: 300,
                     }}
                   >
                     shop_Jewels@gmail.com
@@ -331,6 +268,9 @@ const Footer = () => {
                   <Typography
                     style={{
                       color: "#1B1B1B",
+                      fontSize: "15px",
+                      lineHeight: "25px",
+                      fontWeight: 300,
                     }}
                   >
                     +123456789
@@ -344,7 +284,7 @@ const Footer = () => {
 
       <Divider sx={{ color: "#b2a4a4", my: { xs: "10px", lg: "0px" } }} />
 
-      <Box textAlign={"center"} my={"7px"}>
+      <Box textAlign={"center"} pb={"7px"}>
         <Typography
           fontSize={"15px"}
           fontWeight={400}

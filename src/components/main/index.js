@@ -1,6 +1,13 @@
-import Header from "@/common/Header";
-import { Box } from "@mui/material";
+// * react imports * //
 import React from "react";
+
+// * mui imports * //
+import { Box } from "@mui/material";
+
+// * local imports * //
+import Header from "@/common/Header";
+import Footer from "@/common/Footer";
+
 import Hero from "../hero";
 import Collection from "../collection";
 import Diamond from "../diamond";
@@ -9,7 +16,6 @@ import AboutUs from "../aboutUs";
 import SignatureEarrings from "../earrings";
 import Trending from "../trending";
 import FollowUs from "../followUs";
-import Footer from "@/common/Footer";
 
 const Main = () => {
   return (

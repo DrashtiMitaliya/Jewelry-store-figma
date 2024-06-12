@@ -1,5 +1,12 @@
 "use client";
-import { collectionData } from "@/constants/collectionData";
+
+// * react imports * //
+import React from "react";
+
+// * next imports * //
+import Image from "next/image";
+
+// * mui imports * //
 import {
   Box,
   Button,
@@ -8,11 +15,16 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import Image from "next/image";
-import React from "react";
+
+// * third party imports * //
+import { motion } from "framer-motion";
 import Carousel from "react-material-ui-carousel";
 
+// * local imports * //
+import { collectionData } from "@/constants/collectionData";
+
 const Collection = () => {
+  // * hooks * //
   const isXs = useMediaQuery("(min-width: 0px) and (max-width: 900px)");
 
   return (
@@ -29,6 +41,12 @@ const Collection = () => {
             fontSize={{ xs: "20px", sm: "24px", md: "30px" }}
             lineHeight={"47px"}
             sx={{ color: "#1B1B1B" }}
+            fontFamily={"Bastiken"}
+            component={motion.p}
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 3, ease: "easeInOut" }}
           >
             New Collection
           </Typography>
@@ -80,7 +98,16 @@ const Collection = () => {
                           bottom: "16px",
                         }}
                       >
-                        <Button sx={{ width: "250px" }} className="unique-btn">
+                        <Button
+                          component={motion.button}
+                          whileHover={{
+                            scale: 1.1,
+                            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                          }}
+                          whileTap={{ scale: 0.9 }}
+                          sx={{ width: "250px" }}
+                          className="unique-btn"
+                        >
                           <Typography>{data.name}</Typography>
                         </Button>
                       </Box>
@@ -104,7 +131,14 @@ const Collection = () => {
                     }}
                   >
                     <Box position="relative">
-                      <Box>
+                      <Box
+                        component={motion.p}
+                        animate={{
+                          scale: [1, 1, 1, 1],
+                          rotate: [0, 10, 10, 0],
+                          borderRadius: ["20%", "20%", "20%", "20%"],
+                        }}
+                      >
                         <Image
                           src={data.image}
                           alt={data.name}
