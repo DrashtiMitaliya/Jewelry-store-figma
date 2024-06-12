@@ -92,9 +92,22 @@ const FollowUs = () => {
               {FollowOnInstaData.map((item) => (
                 <>
                   <Grid item md={4} lg={3}>
-                    <Box display={"flex"} justifyContent={"center"}>
+                    <Box
+                      component={motion.div}
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 1 },
+                        opacity: 0.8,
+                        cursor: "pointer",
+                        boxShadow: "0px 15px 15px rgba(0, 0, 0, 0.25)",
+                      }}
+                      display={"flex"}
+                      justifyContent={"center"}
+                    >
                       <Image
-                        style={{ maxWidth: "100%" }}
+                        style={{
+                          maxWidth: "100%",
+                        }}
                         src={item.image}
                         width={250}
                         height={245}

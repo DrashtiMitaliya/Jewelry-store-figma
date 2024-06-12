@@ -92,7 +92,16 @@ const SignatureEarrings = () => {
               {EarringsData.map((item) => (
                 <>
                   <Grid item md={3}>
-                    <Box>
+                    <Box
+                      component={motion.div}
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 1 },
+                        opacity: 0.8,
+                        cursor: "pointer",
+                        boxShadow: "0px 15px 15px rgba(0, 0, 0, 0.25)",
+                      }}
+                    >
                       <Image
                         style={{ maxWidth: "100%" }}
                         src={item.image}
