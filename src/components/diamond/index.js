@@ -52,7 +52,7 @@ const Diamond = () => {
           represent unwavering loyalty and devotion, but it is also a symbol of
           luxury, glamor and class. A diamond tells the world that you are proud
           of your loved one, and want them to have only the best. As Coco Chanel
-          once said, "A diamond is eternity, it is real and it is unbreakable".
+          once said, A diamond is eternity, it is real and it is unbreakable.
         </Typography>
       </Box>
     </Box>
