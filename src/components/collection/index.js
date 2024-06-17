@@ -46,7 +46,7 @@ const Collection = () => {
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 3, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
             New Collection
           </Typography>
@@ -131,14 +131,7 @@ const Collection = () => {
                     }}
                   >
                     <Box position="relative">
-                      <Box
-                        component={motion.p}
-                        animate={{
-                          scale: [1, 1, 1, 1],
-                          rotate: [0, 10, 10, 0],
-                          borderRadius: ["20%", "20%", "20%", "20%"],
-                        }}
-                      >
+                      <Box data-aos="zoom-out">
                         <Image
                           src={data.image}
                           alt={data.name}

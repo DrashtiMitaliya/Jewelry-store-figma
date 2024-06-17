@@ -35,7 +35,7 @@ const FollowUs = () => {
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 3, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
             Follow us on Instagram
           </Typography>
@@ -93,13 +93,14 @@ const FollowUs = () => {
                 <>
                   <Grid item md={4} lg={3}>
                     <Box
+                      data-aos="zoom-in"
                       component={motion.div}
                       whileHover={{
                         scale: 1.1,
-                        transition: { duration: 1 },
-                        opacity: 0.8,
+                        opacity: 1.5,
                         cursor: "pointer",
                         boxShadow: "0px 15px 15px rgba(0, 0, 0, 0.25)",
+                        border: "1px solid #D9D9D9",
                       }}
                       display={"flex"}
                       justifyContent={"center"}

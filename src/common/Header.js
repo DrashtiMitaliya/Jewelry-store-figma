@@ -79,7 +79,7 @@ function Header() {
             component={motion.div}
             whileHover={{
               scale: 1.2,
-              transition: { duration: 2 },
+              transition: { duration: 1 },
             }}
             href="#"
             sx={{
@@ -170,12 +170,6 @@ function Header() {
           <Typography
             noWrap
             component={motion.div}
-            whileHover={{
-              scale: 1.2,
-              transition: { duration: 0.2 },
-            }}
-            whileTap={{ scale: 0.8 }}
-            href="#app-bar-with-responsive-menu"
             sx={{
               display: { xs: "flex", md: "none" },
               flexGrow: 1,

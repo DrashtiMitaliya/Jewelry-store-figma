@@ -39,7 +39,7 @@ const BestSellers = () => {
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 3, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
             Best Sellers
           </Typography>
@@ -137,7 +137,7 @@ const BestSellers = () => {
                       >
                         {item.name ? (
                           <>
-                            <Box>
+                            <Box data-aos="flip-right">
                               <AnimatedImage
                                 width={368}
                                 height={404}

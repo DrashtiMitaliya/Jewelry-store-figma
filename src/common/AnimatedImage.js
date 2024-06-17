@@ -11,6 +11,7 @@ const AnimatedImage = ({ src, alt, width, height }) => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       variants={imageVariants}
+      whileHover={{ cursor: "pointer", opacity: 0.5 }}
       transition={{ duration: 0.5, ease: "easeInOut", rotate: { duration: 5 } }}
     >
       <Image src={src} alt={alt} width={width} height={height} />

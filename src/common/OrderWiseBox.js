@@ -24,7 +24,7 @@ const OrderWiseBox = ({
         {imageOrder === 2 ? (
           <>
             <Grid item md={6}>
-              <Box>
+              <Box data-aos="fade-right">
                 <Image
                   src={image}
                   alt={title}
@@ -36,6 +36,7 @@ const OrderWiseBox = ({
             </Grid>
             <Grid item xs={12} md={6}>
               <Box
+                data-aos="fade-right"
                 sx={{
                   textAlign: {
                     xs: "center",
@@ -54,11 +55,6 @@ const OrderWiseBox = ({
                   fontWeight={400}
                   lineHeight={"48px"}
                   fontFamily={"Bastiken"}
-                  component={motion.p}
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 3, ease: "easeInOut" }}
                 >
                   {title}
                 </Typography>
@@ -117,6 +113,7 @@ const OrderWiseBox = ({
               }}
             >
               <Box
+                data-aos="fade-left"
                 paddingLeft={{
                   xs: "20px",
                   sm: "40px",
@@ -135,11 +132,6 @@ const OrderWiseBox = ({
                   fontWeight={400}
                   fontFamily={"Bastiken "}
                   letterSpacing={"0.02em"}
-                  component={motion.p}
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 3, ease: "easeInOut" }}
                   fontSize={{
                     xs: "20px",
                     sm: "26px",
@@ -218,6 +210,7 @@ const OrderWiseBox = ({
               }}
             >
               <Box
+                data-aos="fade-left"
                 pt={imageSpacing ? { xs: "10px", md: "38px" } : "0"}
                 pb={imageSpacing ? { xs: "10px", md: "54px" } : "0"}
                 paddingLeft={{ xs: "10px", md: "0px" }}
